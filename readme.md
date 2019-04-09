@@ -1,9 +1,9 @@
 ## 优化了treeTable显示
 源：https://github.com/github-muzilong/laravel55-layuiadmin.git
 - 权限管理
-![Image text](https://raw.githubusercontent.com/github-muzilong/laravel55-layuiadmin/master/public/images/5.png)
+![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/5.png)
 - 分类管理
-![Image text](https://raw.githubusercontent.com/github-muzilong/laravel55-layuiadmin/master/public/images/6.png)
+![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/6.png)
 
 
 
