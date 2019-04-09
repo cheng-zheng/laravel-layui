@@ -3,7 +3,7 @@
 - 权限管理
 ![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/5.png)
 - 分类管理
-![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/6.png)
+![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/6.jpg)
 
 
 
