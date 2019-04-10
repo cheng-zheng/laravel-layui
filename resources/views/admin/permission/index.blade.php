@@ -50,14 +50,14 @@
                 elem: '#dataTable'
                 ,height: 500
                 ,url: "{{ route('admin.data') }}"+'?model=permission' //数据接口
-                ,where:{model:"permission"}
+                ,where:{model:"permission",limit:999}
                 ,method:'GET'
                 ,treeId:'id'//树形id字段名称
                 ,treeUpId:'parent_id'//树形父id字段名称
                 ,treeShowName:'display_name'//以树形式显示的字段
                 ,isFilter: false
                 ,iconOpen: true//是否显示图标【默认显示】
-                ,isOpenDefault: true//节点默认是展开还是折叠【默认展开】
+                ,isOpenDefault: false//节点默认是展开还是折叠【默认展开】
                 ,cols: [[ //表头
                     {checkbox: true,fixed: true}
                     ,{field: 'id', title: 'ID', sort: true,width:80}

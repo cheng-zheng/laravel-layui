@@ -38,12 +38,13 @@
                     ,height: 500
                     ,url: "{{ route('admin.category.data') }}" //数据接口
                     ,method: 'GET'
+                    ,where: {limit:999}
                     ,treeId:'id'//树形id字段名称
                     ,treeUpId:'parent_id'//树形父id字段名称
                     ,treeShowName:'name'//以树形式显示的字段
                     ,isFilter: false
                     ,iconOpen: true//是否显示图标【默认显示】
-                    ,isOpenDefault: true//节点默认是展开还是折叠【默认展开】
+                    ,isOpenDefault: false//节点默认是展开还是折叠【默认展开】
                     ,page: false //分页
                     ,cols: [[ //表头
                         {checkbox: true,fixed: true}
