@@ -2,7 +2,7 @@
 <div class="layui-form-item">
     <label for="" class="layui-form-label">上级分类</label>
     <div class="layui-input-block">
-        <select name="parent_id" lay-search  lay-filter="parent_id">
+        <select name="parent_id" lay-search  lay-filter="parent_id" {{ isset($id) ? 'disabled="disabled"' : '' }}>
             <option value="0">一级分类</option>
             @foreach($categorys as $first)
                 <option value="{{ $first['id'] }}" @if(isset($category->parent_id)&&$category->parent_id==$first['id']) selected @endif>{{ $first['name'] }}</option>

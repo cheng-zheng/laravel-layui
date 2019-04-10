@@ -81,7 +81,7 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $categorys = $this->tree(Category::get()->toArray());
-        return view('admin.category.edit',compact('category','categorys'));
+        return view('admin.category.edit',compact('category','categorys','id'));
     }
 
     /**

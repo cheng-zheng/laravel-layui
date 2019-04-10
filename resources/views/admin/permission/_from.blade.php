@@ -3,7 +3,7 @@
 <div class="layui-form-item">
     <label for="" class="layui-form-label">父级</label>
     <div class="layui-input-block">
-        <select name="parent_id" lay-search>
+        <select name="parent_id" lay-search {{ isset($id) ? 'disabled="disabled"' : '' }}>
             <option value="0">顶级权限</option>
             @forelse($permissions as $perm)
                 <option value="{{$perm['id']}}" {{ isset($permission->id) && $perm['id'] == $permission->parent_id ? 'selected' : '' }} >{{$perm['display_name']}}</option>

@@ -69,7 +69,7 @@ class PermissionController extends Controller
     {
         $permission = Permission::findOrFail($id);
         $permissions = $this->tree();
-        return view('admin.permission.edit',compact('permission','permissions'));
+        return view('admin.permission.edit',compact('permission','permissions','id'));
     }
 
     /**
