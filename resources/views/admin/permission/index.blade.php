@@ -87,8 +87,9 @@
                         });
                     });
                 } else if(layEvent === 'edit'){
+                    location = '/admin/permission/'+data.id+'/edit';
                     //编辑
-                    var index = layer.open({
+                    /*var index = layer.open({
                         type: 2,
                         content: '/admin/permission/'+data.id+'/edit',
                         area: ['600px', '500px'],
@@ -96,7 +97,7 @@
                     });
                     if ( window.innerWidth <= 700) {
                         layer.full(index);
-                    }
+                    }*/
 
                 } else if (layEvent === 'children'){
                     var pid = $("#returnParent").attr("pid");
