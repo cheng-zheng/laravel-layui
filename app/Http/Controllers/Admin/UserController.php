@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
-use App\Models\User;
+use App\Models\AdminUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
@@ -42,7 +42,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['uuid'] = \Faker\Provider\Uuid::uuid();
         $data['password'] = bcrypt($data['password']);
-        if (User::create($data)){
+        if (AdminUser::create($data)){
             return redirect()->to(route('admin.user'))->with(['status'=>'添加用户成功']);
         }
         return redirect()->to(route('admin.user'))->withErrors('系统错误');
@@ -67,7 +67,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $user = AdminUser::findOrFail($id);
         return view('admin.user.edit',compact('user'));
     }
 
@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-        $user = User::findOrFail($id);
+        $user = AdminUser::findOrFail($id);
         $data = $request->except('password');
         if ($request->get('password')){
             $data['password'] = bcrypt($request->get('password'));
@@ -103,7 +103,7 @@ class UserController extends Controller
         if (empty($ids)){
             return response()->json(['code'=>1,'msg'=>'请选择删除项']);
         }
-        if (User::destroy($ids)){
+        if (AdminUser::destroy($ids)){
             return response()->json(['code'=>0,'msg'=>'删除成功']);
         }
         return response()->json(['code'=>1,'msg'=>'删除失败']);
@@ -114,7 +114,7 @@ class UserController extends Controller
      */
     public function role(Request $request,$id)
     {
-        $user = User::findOrFail($id);
+        $user = AdminUser::findOrFail($id);
         $roles = Role::get();
         $hasRoles = $user->roles();
         foreach ($roles as $role){
@@ -141,7 +141,7 @@ class UserController extends Controller
      */
     public function permission(Request $request,$id)
     {
-        $user = User::findOrFail($id);
+        $user = AdminUser::findOrFail($id);
         $permissions = $this->tree();
         foreach ($permissions as $key1 => $item1){
             $permissions[$key1]['own'] = $user->hasDirectPermission($item1['id']) ? 'checked' : false ;
@@ -164,7 +164,7 @@ class UserController extends Controller
      */
     public function assignPermission(Request $request,$id)
     {
-        $user = User::findOrFail($id);
+        $user = AdminUser::findOrFail($id);
         $permissions = $request->get('permissions');
 
         if (empty($permissions)){

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Member;
 use App\Models\Message;
-use App\Models\User;
+use App\Models\AdminUser;
 use App\Traits\PushMessage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,7 +43,7 @@ class MessageController extends Controller
             }
         }
         $res = $model->orderBy('read','asc')->orderBy('id','desc')->paginate($request->get('limit',30))->toArray();
-        $users = User::pluck('name','uuid');
+        $users = AdminUser::pluck('name','uuid');
         $member = Member::pluck('name','uuid');
         foreach ($res['data'] as &$d) {
             switch ($d['flag']){
@@ -96,7 +96,7 @@ class MessageController extends Controller
     {
         if ($request->ajax()){
             //默认后台用户
-            $model = new User();
+            $model = new AdminUser();
             if ($request->get('user_type')==3){
                 $model = new Member();
             }
@@ -227,7 +227,7 @@ class MessageController extends Controller
     {
         if ($request->ajax()){
             $res = Message::where('accept_uuid',auth()->user()->uuid)->orderBy('read','asc')->orderBy('id','desc')->paginate($request->get('limit',30))->toArray();
-            $users = User::pluck('name','uuid');
+            $users = AdminUser::pluck('name','uuid');
             $member = Member::pluck('name','uuid');
             foreach ($res['data'] as &$d) {
                 switch ($d['flag']){

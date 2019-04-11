@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
         \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         //用户
-        $user = \App\Models\User::create([
+        $user = \App\Models\AdminUser::create([
             'username' => 'root',
             'phone' => '18908221080',
             'name' => '超级管理员',

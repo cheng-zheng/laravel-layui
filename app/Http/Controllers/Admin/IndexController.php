@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Icon;
 use App\Models\Permission;
 use App\Models\Role;
-use App\Models\User;
+use App\Models\AdminUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -47,7 +47,7 @@ class IndexController extends Controller
         $model = $request->get('model');
         switch (strtolower($model)) {
             case 'user':
-                $query = new User();
+                $query = new AdminUser();
                 break;
             case 'role':
                 $query = new Role();
@@ -58,7 +58,7 @@ class IndexController extends Controller
                 $query = $query->with('icon')->orderBy('parent_id','asc');
                 break;
             default:
-                $query = new User();
+                $query = new AdminUser();
                 break;
         }
         $res = $query->paginate($request->get('limit', 30))->toArray();
