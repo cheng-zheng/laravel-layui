@@ -6,11 +6,11 @@
             {{csrf_field()}}
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
-                <input type="text" name="username" value="{{old('username')}}" lay-verify="required" placeholder="用户名" class="layui-input">
+                <input type="text" name="username" value="admin" lay-verify="required" placeholder="用户名" class="layui-input">
             </div>
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
-                <input type="password" name="password"  lay-verify="required" placeholder="密码" class="layui-input">
+                <input type="password" name="password" value="123456" lay-verify="required" placeholder="密码" class="layui-input">
             </div>
             {{--<div class="layui-form-item">
                 <div class="layui-row">

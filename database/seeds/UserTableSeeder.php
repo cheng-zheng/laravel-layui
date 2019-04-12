@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
 
         //用户
         $user = \App\Models\AdminUser::create([
-            'username' => 'root',
+            'username' => 'admin',
             'phone' => '18908221080',
             'name' => '超级管理员',
             'email' => 'root@dgg.net',

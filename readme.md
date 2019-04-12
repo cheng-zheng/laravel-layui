@@ -15,7 +15,7 @@
 - php artisan migrate
 - php artisan db:seed
 - php artisan key:generate
-- 登录后台：host/admin   帐号：root  密码：123456
+- 登录后台：host/admin   帐号：admin  密码：123456
 ## 图片展示
 - 后台主页
 ![Image text](https://raw.githubusercontent.com/github-muzilong/laravel55-layuiadmin/master/public/images/1.png)
