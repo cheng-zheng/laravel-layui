@@ -4,7 +4,7 @@
 ![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/5.png)
 - 分类管理
 ![Image text](https://raw.githubusercontent.com/cheng-zheng/laravel-layui/master/public/images/6.jpg)
-
+- 表user改为admin_user
 
 
 ## 安装步骤
